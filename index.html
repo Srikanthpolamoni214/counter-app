@@ -1,15 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="./index.js">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <style>
         
-    </script>
-</head>
-<body>
-    
+     
+      .bg {
+        text-align: center;
+        margin-top: 25px;
+      }
+      button {
+        margin-top: 25px;
+      }
+      .cd{
+        padding: px;
+        border: 2px solid blue;
+        
+        width: 200px;
 
-</body>
+        box-shadow: 1px 1px 2px;
+        
+        margin-bottom: 20px;
+      }
+      #h1{
+        font-size: 70px;
+        text-shadow: 1px 4px 5px;
+        
+      }
+      .count1{
+        background-color: aquamarine;
+        
+            padding: 5px;
+            color: blue;
+        
+      }
+      button{
+        padding: 12px;
+        font-size: 22px;
+        font-weight: 400;
+        width: 130px;
+        border-radius: 22px;
+        
+        
+      }
+     
+    </style>
+  </head>
+  <body>
+    <div class="bg ">
+      <div class="d-flex flex-row justify-content-center">
+        <div class="cd">
+            <div> <h1 class="count1">COUNTER</h1></div>
+           
+            <p id="h1">0</p>
+        </div>
+      </div>
+        
+        
+          <div class="div1"><button class="rd" title="decrement" style="background-color: red;color: white;" onclick="decrement()"> <span style="font-size: small;">(-1)</span><br>decrement </button></div>
+          <div><button title="reset" style="background-color: black;color: white;width: 70px;" onclick="reset()">reset</button></div>
+          <div><button title="increment" style="background-color: green;color: white;" onclick="increment()"><span style="font-size: small;">(+1)</span>  <br>increment</button></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let h1 = document.getElementById("h1");
+      function decrement() {
+        count = h1.textContent;
+        counter = count - 1;
+        h1.innerText = counter;
+        if (counter > 0) {
+          h1.style.color = "green";
+        } else if (counter < 0) {
+          h1.style.color = "red";
+        } else {
+          h1.style.color = "black";
+        }
+      }
+
+      function increment() {
+        count = h1.textContent;
+        counter = parseInt(count) + 1;
+        h1.innerText = counter;
+        if (counter > 0) {
+          h1.style.color = "green";
+        } else if (counter < 0) {
+          h1.style.color = "red";
+        } else {
+          h1.style.color = "black";
+        }
+      }
+      function reset() {
+        h1.textContent = "0";
+        h1.style.color = "black";
+      }
+    </script>
+  </body>
 </html>
